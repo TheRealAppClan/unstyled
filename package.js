@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Accounts Templates unstyled.',
-  version: '1.14.2',
+  version: '1.14.3',
   name: 'useraccounts:unstyled',
   git: 'https://github.com/meteor-useraccounts/unstyled.git',
 });
@@ -18,11 +18,11 @@ Package.on_use(function(api, where) {
   ], ['client', 'server']);
 
   // Requires all routing packages loads before this asking for weak dependencies.
-  api.use('useraccounts:flow-routing@1.14.2', ['client', 'server'], {weak: true});
-  api.use('useraccounts:iron-routing@1.14.2', ['client', 'server'], {weak: true});
+  api.use('useraccounts:flow-routing', ['client', 'server'], {weak: true});
+  api.use('useraccounts:iron-routing', ['client', 'server'], {weak: true});
 
   api.imply([
-    'useraccounts:core@1.14.2',
+    'useraccounts:core',
   ], ['client', 'server']);
 
   api.add_files([
@@ -70,7 +70,7 @@ Package.on_use(function(api, where) {
 Package.on_test(function(api) {
   api.use([
     'useraccounts:unstyled',
-    'useraccounts:core@1.14.2',
+    'useraccounts:core',
   ]);
 
   api.use([
